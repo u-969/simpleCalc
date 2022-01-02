@@ -1,16 +1,36 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+print("My Magical calculator")
+print("Type 'QQ' to exit\n")
+
+Equation = 0
+Previous_result = 0
+Run = True
+print(type(Equation))
+
+def perform_math():
+    global Equation
+    global Previous_result
+    global Run
+
+    Equation = input("Enter Equation:")
+
+    if Equation == 'QQ':
+        print("Bye Bye\n")
+        Run = False
+    elif Equation == 'qq':
+        print("Bye Bye\n")
+        Run = False
+    else:
+        int(Equation)
+        print(type(Equation))
+        Previous_result = eval(Equation)
+        print("Results = ", Previous_result)
+        print("Is all digits = " + str(Equation.isdigit()))
+        print("Is all Alphanumeric = " + str(Equation.isalnum()))
+        print("Is all alphabet = " + str(Equation.isalpha()))
+        print("Is all decimal = " + str(Equation.isdecimal()))
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+while Run:
+    perform_math()
