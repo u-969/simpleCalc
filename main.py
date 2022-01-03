@@ -1,11 +1,12 @@
+# import math
+import re
 
-print("My Magical calculator")
+print("simpleCalc 'In-Line calculator'")
 print("Type 'QQ' to exit\n")
 
 Equation = 0
 Previous_result = 0
 Run = True
-print(type(Equation))
 
 
 def perform_math():
@@ -20,14 +21,10 @@ def perform_math():
         Run = False
 
     else:
+        # Equation = re.sub('[a-zA-z,.():+" "]', '', Equation)
+        Equation = re.sub('[a-zA-z,():+"]', '', Equation)
         Previous_result = eval(Equation)
         print("Results = ", Previous_result)
-
-
-# print("Is all digits = " + str(Equation.isdigit()))
-# print("Is all Alphanumeric = " + str(Equation.isalnum()))
-# print("Is all alphabet = " + str(Equation.isalpha()))
-# print("Is all decimal = " + str(Equation.isdecimal()))
 
 
 while Run:
